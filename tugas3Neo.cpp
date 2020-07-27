@@ -247,7 +247,7 @@ void ganjilGenap()
 
 void errorChoice()
 {
-    cout << "Pilihan Anda tidak ditemukan 404" << endl;
+    cout << "Pilihan Anda tidak ditemukan 404 " << endl;
 }
 void waterMark()
 {
