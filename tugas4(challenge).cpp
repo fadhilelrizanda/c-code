@@ -33,7 +33,6 @@ int main()
         error();
         break;
     }
-    segitigaTegak(type);
     watermark();
 }
 
