@@ -5,7 +5,7 @@ int main()
 {
     // the first data type i.e string represents
     // the type of key we want the second data type
-    // i.e int represents the type of values we
+    // i.e int represents the type of values w
     // want to store at that location
     map<string, int> marks{{"Rithvik", 78},
                            {"Suraj", 91},
