@@ -6,8 +6,8 @@ int main()
     int r;
     cout << "Circle Rectangle" << endl;
     cout << "Enter the radius of the circle : ";
-    cout << "enter phi :"; // ditambah
-    cin >> phi;  // ditambah
+    cout << "enter phi :"; //! ditambah
+    cin >> phi;  //! ditambah
     cin >> r;
     cout << "The Circle Rectangle is : " << phi * r * r << endl;
     cout << endl;

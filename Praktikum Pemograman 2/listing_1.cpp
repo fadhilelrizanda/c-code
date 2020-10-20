@@ -58,7 +58,7 @@ int main()
          << endl;
     cout << " The value of a is = " << a << endl;
     b = ++a;
-    cout << " b = ++a" << endl;  // Ganti dengan b = b++;
+    cout << " b = ++a" << endl;  //! Ganti dengan b = b++;
     cout << " The value of a is = " << a << endl;
     cout << " The value of b is = " << b << endl;
     b = a++;

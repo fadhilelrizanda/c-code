@@ -11,8 +11,8 @@ int z;
  cin >> y;
  z = (x || y) && !(x && y);
  cout<<x<<" XOR "<<y<< " = "<< z << endl;
- cout<<"-------------------------"<<endl; // tambahan
- cout<<x<<" XOR "<<y<< " = "<< !z << endl; //tambahn
+ cout<<"-------------------------"<<endl; //! tambahan
+ cout<<x<<" XOR "<<y<< " = "<< !z << endl; //!tambahn
  system("PAUSE");
  return 0;
  }
