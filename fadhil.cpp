@@ -4,9 +4,9 @@ using namespace std;
 
 int main()
 {
-    for(int i =1; i<5;i++)
-    {
-   cout<<"Fadhill"<<endl;
-    }
-    getch();
+  char c = 'C', b = 'B';
+if(c>b)
+{
+    cout<<"Trueee"<<endl;
+}
 }

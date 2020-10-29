@@ -33,12 +33,10 @@ int main()
     cout << " The value of d is " << d << endl;
     cout << " The value of e is " << e << endl
          << endl;
-
     //arithmetic Operator
     cout << " The value of a+b =" << a + b << endl;
     cout << " The value of a%b =" << a % b << endl
          << endl;
-
     b = 0;
     a = 1;
     b += a;
@@ -57,8 +55,8 @@ int main()
     cout << endl
          << endl;
     cout << " The value of a is = " << a << endl;
-    b = ++a;
-    cout << " b = ++a" << endl;  //! Ganti dengan b = b++;
+    b = b++; //! Ganti dengan b = b++;
+    cout << " b = ++a" << endl;  
     cout << " The value of a is = " << a << endl;
     cout << " The value of b is = " << b << endl;
     b = a++;
