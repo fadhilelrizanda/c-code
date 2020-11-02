@@ -11,11 +11,12 @@
 
 #include <iostream>
 using namespace std;
-
+#define phi 3.14
 int main()
 {
     int pilihan, bangun;
-    float panjang, lebar, jari_jari, luas, keliling, luas_permukaan, volume_bangun, tinggi, sisi_a, sisi_b, alas, sisi;
+    float panjang, lebar, jari_jari, tinggi, sisi_a, sisi_b, alas, sisi, luas, keliling, volume, luas_permukaan;
+
     cout << "Program menghitung luas dan keliling bangun datar dan menghitung luas permukaan dan volume bangun ruang" << endl;
     cout << "===========================================================================================================" << endl;
     cout << endl;
@@ -34,38 +35,46 @@ int main()
         if (pilihan == 1)
         {
             cout << "Persegi" << endl;
-            cout << "Masukkan panjang sisi";
+            cout << "Masukkan panjang sisi : ";
             cin >> panjang;
-            cout << "Keliling persegi : " << 4 * panjang << endl;
-            cout << "luas persegi : " << panjang * panjang << endl;
+            keliling = 4 * panjang;
+            luas = panjang * panjang;
+            cout << "Keliling persegi : " << keliling << endl;
+            cout << "luas persegi : " << luas << endl;
         }
         else if (pilihan == 2)
         {
             cout << "Persegi Panjang" << endl;
-            cout << "Masukkan panjang ";
+            cout << "Masukkan panjang : ";
             cin >> panjang;
-            cout << "Masukkan lebar ";
+            cout << "Masukkan lebar : ";
             cin >> lebar;
-            cout << "Keliling persegi panjang: " << 2 * (panjang + lebar) << endl;
-            cout << "luas persegi panjang: " << panjang * lebar << endl;
+            luas = panjang * lebar;
+            keliling = 2 * (panjang + lebar);
+            cout << "Keliling persegi panjang : " << keliling << endl;
+            cout << "luas persegi panjang: " << luas << endl;
         }
         else if (pilihan == 3)
         {
             cout << "Segitiga" << endl;
-            cout << "Masukkan tinggi ";
+            cout << "Masukkan tinggi : ";
             cin >> tinggi;
-            cout << "Masukkan panjang alas ";
+            cout << "Masukkan panjang alas : ";
             cin >> alas;
-            cout << "Keliling segitiga: " << 3 * (alas) << endl;
-            cout << "luas segitiga: " << tinggi * alas * 0.5 << endl;
+            keliling = 3 * (alas);
+            luas = tinggi * alas * 0.5;
+            cout << "Keliling segitiga: " << keliling << endl;
+            cout << "luas segitiga: " << luas << endl;
         }
         else if (pilihan == 4)
         {
             cout << "Linkaran" << endl;
-            cout << "Masukkan panjang  jari-jari ";
+            cout << "Masukkan panjang  jari-jari : ";
             cin >> jari_jari;
-            cout << "Keliling lingkaran: " << 3.14 * 2 * jari_jari << endl;
-            cout << "luas lingkaran: " << 3.14 * jari_jari * jari_jari << endl;
+            keliling = phi * 2 * jari_jari;
+            luas = phi * jari_jari * jari_jari;
+            cout << "Keliling lingkaran: " << keliling << endl;
+            cout << "luas lingkaran: " << luas << endl;
         }
         else
         {
@@ -74,7 +83,7 @@ int main()
         break;
     case 2:
         cout << "Anda memilih bangun ruang" << endl;
-        cout << "Bangun ruang\n[1]Kubus\n[2]Balok \n[3]Bola\n[4]Kerucut" << endl;
+        cout << "Bangun ruang\n[1]Kubus\n[2]Balok \n[3]Bola" << endl;
         cout << "===========================================================================================================" << endl;
         cout << endl;
         cout << "Masukkan Pilihan Anda";
@@ -82,25 +91,53 @@ int main()
         if (pilihan == 1)
         {
             cout << "Kubus" << endl;
-            cout << "Masukkan panjang sisi ";
+            cout << "Masukkan panjang sisi : ";
             cin >> sisi;
-            cout << "Volume kubus : " << sisi * sisi * sisi << endl;
-            cout << "Luas Permukaan kubus: " << 6 * sisi * sisi << endl;
+            volume = sisi * sisi * sisi;
+            luas_permukaan = 6 * sisi * sisi;
+            cout << "Volume kubus : " << volume << endl;
+            cout << "Luas Permukaan kubus : " << luas_permukaan << endl;
         }
         else if (pilihan == 2)
         {
             cout << "Balok" << endl;
-            cout << "Masukkan panjang  ";
+            cout << "Masukkan panjang  : ";
             cin >> panjang;
-            cout << "Masukkan lebar";
+            cout << "Masukkan lebar : ";
             cin >> lebar;
-            cout << "Masukkan tinggi";
+            cout << "Masukkan tinggi : ";
             cin >> tinggi;
-            cout << "Volume balok : " << panjang * lebar * tinggi << endl;
-            cout << "Luas Permukaan balok: " << 2 * panjang * lebar + 2 * panjang * tinggi + 2 * lebar * tinggi << endl;
+            volume = panjang * lebar * tinggi;
+            luas_permukaan = 2 * panjang * lebar + 2 * panjang * tinggi + 2 * lebar * tinggi;
+            cout << "Volume balok : " << volume << endl;
+            cout << "Luas Permukaan balok : " << luas_permukaan << endl;
         }
+        else if (pilihan == 3)
+        {
+            cout << "Bola" << endl;
+            cout << "Masukkan jari-jari : ";
+            cin >> jari_jari;
+            volume = 4 / 3 * phi * jari_jari * jari_jari * jari_jari;
+            luas_permukaan = 4 * phi * jari_jari * jari_jari;
+            cout << "Volume Bola : " << volume << endl;
+            cout << "Luas Permukaan Bola: " << luas_permukaan << endl;
+        }
+        else
+        {
+            cout << "Pilihan yang anda masukkan salah " << endl;
+        }
+        break;
 
     default:
+        cout << "Pilihan yang anda masukkan salah " << endl;
         break;
     }
+    cout << endl;
+    cout << endl;
+    cout << "================================================" << endl;
+    cout << "Fadhil Elrizanda" << endl;
+    cout << "1910952034" << endl;
+    cout << "Modul 2" << endl;
+    cout << "Kelompok 10" << endl;
+    cout << endl;
 }
