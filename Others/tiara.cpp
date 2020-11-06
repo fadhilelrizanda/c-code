@@ -26,7 +26,7 @@ int main()
         cout << endl;
         cin >> uts[i];
         cout << endl;
-        nilai_akhir[i] = (nilai_uas[i] + absen[i] + uts[i]) / 3;
+        nilai_akhir[i] = (nilai_uas[i] + absen[i] + uts[i] + kuis[i]) / 4;
     }
     for (int i = 0; i < 10; i++)
     {
