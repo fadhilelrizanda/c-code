@@ -1,0 +1,1 @@
+kursi_bioskop[12][12]
