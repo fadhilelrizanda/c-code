@@ -17,7 +17,7 @@ int main()
         cout << "Masukkan nilai UAS ke -" << i + 1 << " : ";
         cin >> nilai_uas[i];
         cout << endl;
-        cout << "Masukkan nilai ke Absen -" << i + 1 << " : ";
+        cout << "Masukkan nilai absen -" << i + 1 << " : ";
         cin >> absen[i];
         cout << endl;
         cout << "Masukkan nilai ke Kuis -" << i + 1 << " : ";
