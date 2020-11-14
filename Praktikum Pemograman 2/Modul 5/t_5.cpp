@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <math.h>
+
 float e_potensial(float *a, float *b);
 float d_listrik(float *a, float *b);
 float impedansi_total(float *a, float *b, float *c);
