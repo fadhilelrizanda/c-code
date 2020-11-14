@@ -1,91 +1,114 @@
 #include <iostream>
-#include <conio.h>
 using namespace std;
 
-long int faktorial(int a);
+void tampilkan_list();
 
 int main()
 {
-	int x, bil, n, hasil;
-	long int HasilFaktorial;
-	int i, y;
-	int matriks_A[2][2] = {}, matriks_B[2][2] = {}, matriks_C[2][2] = {};
-	char ulang;
-
-	cout << "Masukan Nilai X = ";
-	cin >> x;
-	cout << "Nilai Awal : " << x << endl;
-
-	x = x >> 1;
-	cout << "Hasil dari Geser 1 Bit Ke Kanan = " << x << endl;
-
-	cout << "n = ";
-	cin >> n;
-
-	cout << "n! = " << faktorial(n) << endl;
-
-	cout << "\nPenjumlahan 2 Matriks Ordo 2x2 \n\n";
-	do
+	int umur, tiket, movie[5], harga, i;
+	string nama;
+	cout << "\tBIOSKOP KELUARGA" << endl;
+	cout << "\tJL. Kulon no. 16" << endl;
+	cout << "\tMasukkan Nama Anda : ";
+	cin >> nama;
+	cout << "\tMasukkan Umur Anda : ";
+	cin >> umur;
+	if (umur > 12)
 	{
-		//Input data matriks A
-		cout << "\n PENGISIAN MATRIKS A";
-		cout << "\nData matriks A \n";
-		for (i = 0; i < 2; i++)
+		tampilkan_list();
+		while (true)
 		{
-			for (y = 0; y < 2; y++)
+		mulai:
+			cout << "\tMOVIE PILIHAN ANDA    : ";
+			cin >> movie[i];
+			if (movie[i] > 5 || movie[i] <= 0)
 			{
-				cout << "Masukan baris ke " << i + 1 << " kolom ke " << y + 1 << " : ";
-				cin >> matriks_A[i][y];
+				cout << "\tMAAF INPUT YANG ANDA MASUKKAN SALAH, SILAHKAN MASUKKAN LAGI" << endl;
+				continue;
+			}
+			else
+			{
+				break;
 			}
 		}
-
-		//Input data matriks B
-		cout << "\n PENGISIAN MATRIKS B";
-		cout << "\nData matriks B \n";
-		for (i = 0; i < 2; i++)
+		if (umur < 17)
 		{
-			for (y = 0; y < 2; y++)
+			switch (movie[i])
 			{
-				cout << "Masukan baris ke " << i + 1 << " kolom ke " << y + 1 << " : ";
-				cin >> matriks_B[i][y];
+			case 1:
+				cout << "\tANDA MASIH BOCIL LAGI,TAK BOLEH NONTON INI" << endl;
+				cout << "\tSilahkan Masukkan Kembali :" << endl;
+				goto mulai;
+				break;
+			case 2:
+				cout << "\tANDA MASIH BOCIL LAGI,TAK BOLEH NONTON INI" << endl;
+				cout << "\tSilahkan Masukkan Kembali :" << endl;
+				goto mulai;
+				break;
+			default:
+				break;
 			}
 		}
-
-		//Output hasil penjumlahan Matriks A + Matriks B
-		cout << "\n======== HASIL PENJUMLAHAN A + B ========";
-		cout << "\nMatriks A + Matriks B : " << endl
+		while (true)
+		{
+			cout << "\tJumlah Tiket yang dipesan    : ";
+			cin >> tiket;
+			if (tiket > 5 || tiket <= 0)
+			{
+				cout << "\tTIKET YANG ANDA PESAN TIDAK MEMENUHI SYARAT" << endl;
+				continue;
+			}
+			else if (tiket <= 5)
+			{
+				harga = tiket * 35000;
+				cout << "\tPesanan Anda seharga : " << harga << endl
+					 << endl
+					 << endl;
+				break;
+			}
+		}
+		cout << " ====================================================" << endl;
+		cout << "\tBIOSKOP KELUARGA" << endl;
+		cout << "\tJL. Kulon no. 16" << endl;
+		cout << " ====================================================" << endl;
+		cout << "\tNama Konsumen 		: " << nama << endl;
+		cout << "\tUmur Konsumen 		: " << umur << endl;
+		cout << "\tJumlah Tiket		: " << tiket << endl;
+		cout << "\tTotal Harga		:Rp." << harga << endl;
+		cout << endl
+			 << endl
 			 << endl;
-		for (i = 0; i < 2; i++)
+		cout << "\tTERIMAKASIH TELAH MENONTON DI BIOSKOP KAMI" << endl;
+		for (int a = 1; a <= tiket; a++)
 		{
-			for (y = 0; y < 2; y++)
+			for (int b = 1; b <= a; b++)
 			{
-				matriks_C[i][x] = matriks_A[i][y] + matriks_B[i][y];
+				cout << "\t*";
 			}
 			cout << endl;
 		}
-		cout << "Menampilkan matriks" << endl;
-		for (i = 0; i < 2; i++)
-		{
-			for (y = 0; y < 2; y++)
-			{
-				cout << matriks_C[i][x] << " ";
-			}
-			cout << endl;
-		}
-		cout << "\n.BILA INGIN MELAKUKAN PERHITUNGAN LAGI++.\n";
-		cout << "\nHitung lagi ? [Y/T] : ";
-		cin >> ulang;
-	} while (ulang == 'Y');
-	cout << "\n\nTerima Kasih\n\n";
-	getch();
+	}
+	else
+	{
+		cout << "SILAHKAN PULANG SAJA NAK" << endl;
+	}
+	// int main()
+	// {
+	// }
+	// return 0;
 }
 
-long int faktorial(int a)
+void tampilkan_list()
 {
-	int hasil = 1;
-	for (int bil = a; bil >= 1; bil--)
-	{
-		hasil = hasil * bil;
-	}
-	return hasil;
+	cout << " ====================================================" << endl;
+	cout << "\t   DAFTAR MOVIE MINGGU INI ";
+	cout << endl;
+	cout << "\t*-------------------------------*" << endl;
+	cout << "\t| 1. Fifty Shades Freed (17+)   |" << endl;
+	cout << "\t| 2. The Conjuring (17+)        |" << endl;
+	cout << "\t| 3. spider man far from home   |" << endl;
+	cout << "\t| 4. Baby Boss   				 |" << endl;
+	cout << "\t| 5. Toy Story 4                |" << endl;
+	cout << " ====================================================" << endl;
+	cout << endl;
 }

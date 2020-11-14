@@ -1,1 +1,1 @@
-kursi_bioskop[12][12]
+ int kolom = 6, baris = 10, baris_pilih, kolom_pilih, kursi_bioskop[12][12];

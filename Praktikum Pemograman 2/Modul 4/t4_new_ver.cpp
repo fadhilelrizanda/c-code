@@ -5,9 +5,7 @@ using namespace std;
 
 int main()
 {
-    int kolom = 6, baris = 10;
-    int baris_pilih, kolom_pilih;
-    int kursi_bioskop[12][12];
+    int kolom = 6, baris = 10, baris_pilih, kolom_pilih, kursi_bioskop[12][12];
 
     cout << endl;
     cout << "Program menampilkan dan memesan tiket bioskop pada keadaan covid 19" << endl;
