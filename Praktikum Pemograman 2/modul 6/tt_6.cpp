@@ -35,13 +35,12 @@ public:
 
 int main()
 {
-    Hotel pahlawan("Pahlawan", 10, 1000, 2);
+    Hotel pahlawan("Pahlawan", 2, 100000, 2);
     pahlawan.nama_hotel();
     cout << "Biaya yang dikeluarkan : " << pahlawan.Harga_total() << endl;
     cout << endl;
     Hotel zuri("Zuri", 2, 1000000, 1);
     zuri.nama_hotel();
     cout << "Biaya yang dikeluarkan : " << zuri.Harga_total() << endl;
-
     cout << endl;
 }

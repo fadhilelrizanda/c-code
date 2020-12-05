@@ -1,110 +1,80 @@
 #include <iostream>
 using namespace std;
 
-void tampilkan_list();
+struct data
+{
+    char nama[50][50];
+    char nim[50][50];
+    float nilai1[50], nilai2[50], nilai3[50], nilai4[50];
+    float total[100];
+    float jum;
+    char dsn[20];
+    char matkul[20];
+} mhs;
 
 int main()
 {
-    int umur, tiket, movie[5], harga, i = 0;
-    string nama;
-    cout << "\tBIOSKOP KELUARGA" << endl;
-    cout << "\tJL. Kulon no. 16" << endl;
-    cout << "\tMasukkan Nama Anda : ";
-    cin >> nama;
-    cout << "\tMasukkan Umur Anda : ";
-    cin >> umur;
-    if (umur > 12)
-    {
-        tampilkan_list();
-        while (true)
-        {
-        mulai:
-            cout << "\tMOVIE PILIHAN ANDA    : ";
-            cin >> movie[i];
-            if (movie[i] > 5 || movie[i] <= 0)
-            {
-                cout << "\tMAAF INPUT YANG ANDA MASUKKAN SALAH, SILAHKAN MASUKKAN LAGI" << endl;
-                continue;
-            }
-            else
-            {
-                break;
-            }
-        }
-        if (umur < 17)
-        {
-            switch (movie[i])
-            {
-            case 1:
-                cout << "\tANDA MASIH BOCIL LAGI,TAK BOLEH NONTON INI" << endl;
-                cout << "\tSilahkan Masukkan Kembali :" << endl;
-                goto mulai;
-                break;
-            case 2:
-                cout << "\tANDA MASIH BOCIL LAGI,TAK BOLEH NONTON INI" << endl;
-                cout << "\tSilahkan Masukkan Kembali :" << endl;
-                goto mulai;
-                break;
-            default:
-                break;
-            }
-        }
-        while (true)
-        {
-            cout << "\tJumlah Tiket yang dipesan    : ";
-            cin >> tiket;
-            if (tiket > 5 || tiket <= 0)
-            {
-                cout << "\tTIKET YANG ANDA PESAN TIDAK MEMENUHI SYARAT" << endl;
-                continue;
-            }
-            else if (tiket <= 5)
-            {
-                harga = tiket * 35000;
-                cout << "\tPesanan Anda seharga : " << harga << endl
-                     << endl
-                     << endl;
-                break;
-            }
-        }
-        cout << " ====================================================" << endl;
-        cout << "\tBIOSKOP KELUARGA" << endl;
-        cout << "\tJL. Kulon no. 16" << endl;
-        cout << " ====================================================" << endl;
-        cout << "\tNama Konsumen 		: " << nama << endl;
-        cout << "\tUmur Konsumen 		: " << umur << endl;
-        cout << "\tJumlah Tiket		: " << tiket << endl;
-        cout << "\tTotal Harga		:Rp." << harga << endl;
-        cout << endl
-             << endl
-             << endl;
-        cout << "\tTERIMAKASIH TELAH MENONTON DI BIOSKOP KAMI" << endl;
-        for (int a = 1; a <= tiket; a++)
-        {
-            for (int b = 1; b <= a; b++)
-            {
-                cout << "\t*";
-            }
-            cout << endl;
-        }
-    }
-    else
-    {
-        cout << "SILAHKAN PULANG SAJA NAK" << endl;
-    }
-}
 
-void tampilkan_list()
-{
-    cout << " ====================================================" << endl;
-    cout << "\t   DAFTAR MOVIE MINGGU INI ";
-    cout << endl;
-    cout << "\t*-------------------------------*" << endl;
-    cout << "\t| 1. Fifty Shades Freed (17+)   |" << endl;
-    cout << "\t| 2. The Conjuring (17+)        |" << endl;
-    cout << "\t| 3. spider man far from home   |" << endl;
-    cout << "\t| 4. Baby Boss   				 |" << endl;
-    cout << "\t| 5. Toy Story 4                |" << endl;
-    cout << " ====================================================" << endl;
-    cout << endl;
+    cout << "=================================== " << endl;
+    cout << " Program Grade Nilai Mahasiswa " << endl;
+    cout << "=================================== " << endl;
+    cout << " Masukkan Nama Dosen Pengampu : ";
+    cin >> mhs.dsn;
+    cout << " Mata Kuliah                  : ";
+    cin >> mhs.matkul;
+    cout << "=================================== " << endl
+         << endl;
+
+    cout << " Masukkan Jumlah Mahasiswa: ";
+    cin >> mhs.jum;
+    cout << "============================== " << endl;
+
+    for (int i = 1; i <= mhs.jum; i++)
+    {
+        cout << " Masukkan Nama Mahasiswa : ";
+        cin >> mhs.nama[i];
+        cout << " Masukkan NIM Mahasiswa  : ";
+        cin >> mhs.nim[i];
+        cout << " Masukkan Nilai Kehadiran: ";
+        cin >> mhs.nilai1[i];
+        cout << " Masukkan Nilai Tugas    : ";
+        cin >> mhs.nilai2[i];
+        cout << " Masukkan Nilai UTS      : ";
+        cin >> mhs.nilai3[i];
+        cout << " Masukkan Nilai UAS      : ";
+        cin >> mhs.nilai4[i];
+        mhs.total[i] = (mhs.nilai1[i] * 0.1 + mhs.nilai2[i] * 0.1 + mhs.nilai3[i] * 0.4 + mhs.nilai4[i] * 0.4);
+        cout << endl;
+        cout << " Total Nilai  : " << mhs.total[i] << endl;
+        if (mhs.total[i] >= 90 && mhs.total[i] <= 100)
+        {
+            cout << " Grade Nilai  : A" << endl;
+        }
+        else if (mhs.total[i] >= 80 && mhs.total[i] <= 89)
+        {
+            cout << " Grade Nilai  : B" << endl;
+        }
+        else if (mhs.total[i] >= 70 && mhs.total[i] <= 79)
+        {
+            cout << " Grade Nilai  : C" << endl;
+        }
+        else if (mhs.total[i] >= 50 && mhs.total[i] <= 69)
+        {
+            cout << " Grade Nilai  : D" << endl;
+        }
+        else if (mhs.total[i] >= 0 && mhs.total[i] <= 49)
+        {
+            cout << " Grade Nilai  : E" << endl;
+        }
+        cout << "==============================" << endl;
+        cout << endl;
+    }
+    cout << "\t Rekap Nilai \t" << endl;
+    for (int j = 1; j <= mhs.jum; j++)
+    {
+        cout << "No." << j << " "
+             << "Nama : " << mhs.nama[j] << " Nilai : " << mhs.total[j] << endl;
+    }
+
+    return 0;
 }
