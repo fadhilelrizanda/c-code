@@ -9,4 +9,9 @@ int main()
     {
         printf("Telolet ke-%d \n", i + 1);
     }
+    cout << endl;
+    cout << endl;
+    cout << "Fadhil Elrizanda" << endl;
+    cout << "1910952034" << endl;
+    cout << "Pemograman 2 TE B" << endl;
 }

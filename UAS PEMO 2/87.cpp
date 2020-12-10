@@ -10,4 +10,9 @@ int main()
     cout << "Masukkan tinggi segitiga: ";
     cin >> tinggi;
     cout << "Luas segitiga adalah " << alas * tinggi / 2 << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Fadhil Elrizanda" << endl;
+    cout << "1910952034" << endl;
+    cout << "Pemograman 2 TE B" << endl;
 }
